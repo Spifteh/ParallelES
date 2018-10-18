@@ -142,6 +142,16 @@ def get_cpuvals(inteval = 1):
     }
 
 
+def lock_threads(threads):
+    for t in threads:
+        t.acquire()
+
+
+def unlock_threads(threads):
+    for t in threads:
+        t.release()
+
+
 def get_mem():
     """
     >>> doc = get_mem()
